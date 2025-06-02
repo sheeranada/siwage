@@ -45,7 +45,9 @@ class KeluargaController extends Controller
             $currentPage,
             ['path' => request()->url(), 'query' => request()->query()]
         );
-
+        if ($data->isEmpty()) {
+            $data = collect([]);
+        }
         return view('data warga.keluarga', [
             'data' => $paginated,
             'kelompok' => $kelompok,

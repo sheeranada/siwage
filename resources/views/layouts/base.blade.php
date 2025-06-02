@@ -45,7 +45,7 @@
         </div>
 
         <!-- Navbar -->
-        <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+        <nav class="main-header navbar navbar-expand navbar-white navbar-light sticky-top">
             <!-- Left navbar links -->
             <ul class="navbar-nav">
                 <li class="nav-item">
@@ -61,7 +61,7 @@
             <!-- Right navbar links -->
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item border-end border-dark-subtle pe-3 me-3">
-                    <a class="nav-link" aria-current="page" href="/home">
+                    <a class="nav-link" aria-current="page" href="https://github.com/sheeranada/siwage">
                         <img src="{{ asset('asset/icon/github.svg') }}" alt="github" class="logo-sidebar">
                     </a>
                 </li>

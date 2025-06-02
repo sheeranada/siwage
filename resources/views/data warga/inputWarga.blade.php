@@ -53,7 +53,7 @@
             <x-input label="Tanggal Lahir *" name="tanggal_lahir" type="date" />
         </div>
     </div>
-
+    {{-- Data Kompetensi, Status & Pendidikan --}}
     <div class="d-flex align-items-center my-4">
         <div class="flex-grow-1 border-top border-dark"></div>
         <span class="px-3 text-muted small">Data Kompetensi, Status & Pendidikan</span>

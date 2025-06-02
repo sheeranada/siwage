@@ -66,3 +66,6 @@ Route::middleware('auth')->group(function () {
         Route::put('/akun/{id}', 'update')->name('akun.update');
     });
 });
+Route::fallback(function () {
+    return response()->view('errors.404', [], 404);
+});

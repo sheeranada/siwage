@@ -17,7 +17,7 @@
     </div>
 
     {{-- tambah data --}}
-
+    {{-- data tables responsive --}}
     <div class="table-responsive">
         <table class="table table-bordered table-hover table-striped table-sm display responsive nowrap " id="myTable"
             width="100%">

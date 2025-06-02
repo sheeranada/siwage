@@ -54,8 +54,6 @@
                             {{-- edit --}}
                             <div class="opsi d-flex justify-content-center align-items-center gap-2">
                                 <div class="detail">
-
-
                                     <!-- Button trigger modal -->
                                     <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal"
                                         data-bs-target="#warga-{{ $item->id }}">

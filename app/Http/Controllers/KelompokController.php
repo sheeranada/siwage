@@ -15,6 +15,9 @@ class KelompokController extends Controller
     public function index()
     {
         $data = Kelompok::orderBy('kode_kelompok', 'ASC')->paginate(10);
+        if ($data->isEmpty()) {
+            $data = collect([]);
+        }
         return view('kelompok.index', compact('data'));
     }
     /**

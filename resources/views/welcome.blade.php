@@ -135,9 +135,21 @@
 <body>
     <div class="wrapper">
         <header>
-            <a href="{{ route('login') }}">
-                Login
-            </a>
+            @if (auth()->check())
+                <a href="{{ route('home') }}" style="margin-right: 15px;">Home</a>
+
+                <a href="{{ route('logout') }}"
+                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                    Logout
+                </a>
+
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                </form>
+            @else
+                <a href="{{ route('login') }}">Login</a>
+            @endif
+
         </header>
         <div class="logo">
             <img src="{{ asset('asset/img/gkjw.png') }}" alt="">

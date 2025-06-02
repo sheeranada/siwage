@@ -29,82 +29,88 @@
 
         </x-modal>
     </div>
-    <div class="table-responsive">
-        <table class="table table-bordered table-hover table-striped">
-            <thead>
-                <tr class="text-center">
-                    <th style="width: 80px">#</th>
-                    <th style="width: 180px">Kode Kelompok</th>
-                    <th>Nama Kelompok</th>
-                    <th>Area</th>
-                    <th style="width: 180px">Opsi</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach ($data as $index => $item)
-                    <tr>
-                        <td class="text-center">{{ $index + 1 }}</td>
-                        <td>{{ $item->kode_kelompok }}</td>
-                        <td>{{ $item->nama }}</td>
-                        <td>{{ $item->area }}</td>
-                        <td class="">
-                            {{-- edit --}}
-                            <div class="opsi d-flex justify-content-center align-items-center gap-2">
-                                <div class="update">
-                                    <button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal"
-                                        data-bs-target="#kelompok-{{ $item->id }}">
-                                        <i class="fas fa-pen-to-square"></i>
-                                        Edit
-                                    </button>
-                                    <x-modal id="kelompok-{{ $item->id }}" title="Tambah Data Talenta"
-                                        form-action="{{ route('kelompok.update', $item->id) }}" method="PUT"
-                                        submit-text="Update">
-                                        {{-- nama --}}
-                                        <x-input name="nama" label="Kode Kelompok" type="text"
-                                            value="{{ $item->nama }}" />
-                                        <div class="row">
-                                            {{-- kode --}}
-                                            <div class="col-4">
-                                                <x-input name="kode_kelompok" label="Kode Kelompok (00-99)" type="text"
-                                                    value="{{ $item->kode_kelompok }}" />
-                                            </div>
-                                            {{-- area --}}
-                                            <div class="col-8">
-                                                <div class="form-floating">
-                                                    <select class="form-select" id="area"
-                                                        aria-label="Floating label select example" name="area" required>
-                                                        <option selected value="{{ $item->area }}">{{ $item->area }}
-                                                        </option>
-                                                        <option value="induk">Induk</option>
-                                                        <option value="wilayah">Wilayah</option>
-                                                    </select>
-                                                    <label for="area">Pilih Wilayah / Area</label>
+    @if ($data->isEmpty())
+        <p>Data tidak tersedia</p>
+    @else
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover table-striped">
+                <thead>
+                    <tr class="text-center">
+                        <th style="width: 80px">#</th>
+                        <th style="width: 180px">Kode Kelompok</th>
+                        <th>Nama Kelompok</th>
+                        <th>Area</th>
+                        <th style="width: 180px">Opsi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($data as $index => $item)
+                        <tr>
+                            <td class="text-center">{{ $index + 1 }}</td>
+                            <td>{{ $item->kode_kelompok }}</td>
+                            <td>{{ $item->nama }}</td>
+                            <td>{{ $item->area }}</td>
+                            <td class="">
+                                {{-- edit --}}
+                                <div class="opsi d-flex justify-content-center align-items-center gap-2">
+                                    <div class="update">
+                                        <button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal"
+                                            data-bs-target="#kelompok-{{ $item->id }}">
+                                            <i class="fas fa-pen-to-square"></i>
+                                            Edit
+                                        </button>
+                                        <x-modal id="kelompok-{{ $item->id }}" title="Tambah Data Talenta"
+                                            form-action="{{ route('kelompok.update', $item->id) }}" method="PUT"
+                                            submit-text="Update">
+                                            {{-- nama --}}
+                                            <x-input name="nama" label="Kode Kelompok" type="text"
+                                                value="{{ $item->nama }}" />
+                                            <div class="row">
+                                                {{-- kode --}}
+                                                <div class="col-4">
+                                                    <x-input name="kode_kelompok" label="Kode Kelompok (00-99)"
+                                                        type="text" value="{{ $item->kode_kelompok }}" />
+                                                </div>
+                                                {{-- area --}}
+                                                <div class="col-8">
+                                                    <div class="form-floating">
+                                                        <select class="form-select" id="area"
+                                                            aria-label="Floating label select example" name="area"
+                                                            required>
+                                                            <option selected value="{{ $item->area }}">
+                                                                {{ $item->area }}
+                                                            </option>
+                                                            <option value="induk">Induk</option>
+                                                            <option value="wilayah">Wilayah</option>
+                                                        </select>
+                                                        <label for="area">Pilih Wilayah / Area</label>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </x-modal>
+                                        </x-modal>
+                                    </div>
+                                    {{-- delete --}}
+                                    <div class="delete">
+                                        <form action="{{ route('kelompok.destroy', $item->id) }}" method="POST"
+                                            style="display:inline-block;" class="form-delete">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button class="btn btn-sm btn-danger">
+                                                <i class="fas fa-trash-arrow-up"></i>
+                                                Hapus</button>
+                                        </form>
+                                    </div>
                                 </div>
-                                {{-- delete --}}
-                                <div class="delete">
-                                    <form action="{{ route('kelompok.destroy', $item->id) }}" method="POST"
-                                        style="display:inline-block;" class="form-delete">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button class="btn btn-sm btn-danger">
-                                            <i class="fas fa-trash-arrow-up"></i>
-                                            Hapus</button>
-                                    </form>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                @endforeach
-            </tbody>
-        </table>
-    </div>
-    <div class="paginasi-halaman">
-        {{ $data->links('pagination::bootstrap-5') }}
-    </div>
+                            </td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
+        <div class="paginasi-halaman">
+            {{ $data->links('pagination::bootstrap-5') }}
+        </div>
+    @endif
     <script>
         setTimeout(function() {
             let alert = document.querySelector('.alert');
