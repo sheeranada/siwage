@@ -1,0 +1,371 @@
+*,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+ul,
+li,
+html,
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: black;
+    text-decoration: none;
+}
+
+ol {
+    list-style-type: decimal;
+    margin-left: 1.5rem;
+    padding-left: 1rem;
+}
+
+ol li {
+    margin-bottom: 4px;
+}
+
+
+.wrapper {
+    height: 100vh;
+    width: 100%;
+    padding: 2rem 0.5rem 1rem 0.5rem;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2rem;
+    align-items: center;
+}
+
+
+.logo {
+    display: flex;
+    align-items: center;
+    width: 50%;
+
+}
+
+.logo img {
+    height: 70px;
+    margin-right: 1rem;
+
+}
+
+.brand {
+    text-align: center;
+}
+
+.brand h1,
+h2 {
+    font-size: 1rem;
+}
+
+.info-keluarga {
+    font-family: sans-serif;
+    font-size: 12px;
+    border-collapse: collapse;
+    margin-left: auto;
+
+}
+
+.label {
+    text-align: left;
+    padding-right: 8px;
+    white-space: nowrap;
+}
+
+.colon {
+    padding: 0 8px;
+    text-align: center;
+    width: 10px;
+}
+
+.value.alamat {
+    max-width: 400px;
+    white-space: normal;
+    word-wrap: break-word;
+}
+
+.info-keluarga td {
+    vertical-align: top;
+}
+
+.value {
+    text-align: left;
+    white-space: nowrap;
+}
+
+.title {
+    font-size: 1.8em;
+    text-align: center;
+    padding-top: 1rem;
+    font-weight: 700;
+}
+
+main {
+    overflow-x: auto;
+    padding: 0 2rem;
+
+}
+
+main table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: sans-serif;
+    font-size: 12px;
+    margin-top: 2rem;
+    table-layout: auto;
+    /* bisa disesuaikan ke fixed kalau pengen */
+}
+
+main th,
+main td {
+    border: 1px solid #999;
+    padding: 8px 10px;
+    text-align: left;
+    vertical-align: top;
+    word-wrap: break-word;
+}
+
+main th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+    text-align: center;
+    white-space: nowrap;
+}
+
+main td {
+    white-space: nowrap;
+}
+
+/* Kolom "No" */
+main td:nth-child(1),
+main th:nth-child(1) {
+    width: 30px;
+    text-align: center;
+}
+
+/* kolom nama */
+main td:nth-child(2),
+main th:nth-child(2) {
+    width: 300px;
+    text-align: left;
+}
+
+/* Kolom "LP" */
+main td:nth-child(3),
+main th:nth-child(3) {
+    width: 30px;
+    text-align: center;
+}
+
+/* No Induk */
+main td:nth-child(4),
+main th:nth-child(4) {
+    width: 30px;
+    text-align: center;
+}
+
+/* status pernikahan */
+main td:nth-child(7),
+main th:nth-child(7) {
+    width: 20px;
+    text-align: center;
+}
+
+/* pekerjaan */
+main td:nth-child(8),
+main th:nth-child(8) {
+    width: 20px;
+    text-align: center;
+}
+
+/* Kolom "Pendidikan" */
+main td:nth-child(9),
+main th:nth-child(9) {
+    width: 60px;
+}
+
+/* Kolom-kolom Tanggal */
+main td:nth-child(6),
+main td:nth-child(11),
+main td:nth-child(13),
+main td:nth-child(15),
+main th:nth-child(6),
+main th:nth-child(11),
+main th:nth-child(13),
+main th:nth-child(15) {
+    width: 50px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+/* status */
+main td:nth-child(16),
+main th:nth-child(16) {
+    width: 20px;
+    text-align: center;
+}
+
+/* talenta */
+main td:nth-child(17),
+main th:nth-child(17) {
+    width: 20px;
+    text-align: center;
+}
+
+footer {
+    padding: 0 2rem;
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.note {
+    margin-top: 1rem;
+    padding-left: 0.5rem;
+}
+
+.note p {
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+}
+
+.note ol {
+    margin: 0;
+    padding-left: 1.2rem;
+}
+
+.note li {
+    margin-bottom: 4px;
+    font-size: 12px;
+}
+
+.ttd-kk {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    font-family: "Times New Roman", serif;
+    font-size: 12px;
+    padding-right: 2rem;
+}
+
+.ttd-kk .kiri,
+.ttd-kk .kanan {
+    min-height: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    text-align: center;
+}
+
+.ttd-kk .kanan .tanggal {
+    font-size: 14px !important;
+    font-style: italic;
+    line-height: 1.4;
+    font-family: "Times New Roman", serif;
+    margin-bottom: 0.2rem;
+    display: block;
+}
+
+
+
+.ttd-kk .kiri {
+    padding-bottom: 0.5rem;
+}
+
+.ttd-kk .kiri p,
+.ttd-kk .kanan p {
+    margin: 0;
+    font-weight: normal;
+    font-size: 12px;
+}
+
+.ttd-kk .ttd-space {
+    height: 80px;
+}
+
+.ttd-kk .ttd-line {
+    padding-bottom: 2px;
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.ttd-kk .kanan h4 {
+    margin: 8px 0 2px;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.ttd-kk .kanan span {
+    font-size: 12px;
+}
+
+.img-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+    opacity: 0.08;
+}
+
+.watermark-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.watermark-group img.watermark {
+    max-width: 780px;
+    height: auto;
+    margin-bottom: 0.5rem;
+}
+
+.watermark-group .teks h2 {
+    font-size: 1.8rem;
+    font-family: "Times New Roman", serif;
+    font-weight: bold;
+    opacity: 0.2;
+    transform: rotate(-10deg);
+    margin: 0;
+}
+
+
+.wrapper,
+header,
+main,
+footer {
+    position: relative;
+    z-index: 1;
+}
+
+@media print {
+    main {
+        overflow: visible !important;
+        padding: 0;
+    }
+
+    main table {
+        font-size: 12px;
+        width: 100%;
+    }
+
+    .img-overlay {
+        display: flex !important;
+    }
+
+}

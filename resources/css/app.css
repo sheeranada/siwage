@@ -1,0 +1,5 @@
+/* @import 'bootstrap'; */
+@import 'bootstrap-icons/font/bootstrap-icons';
+@import url('datatables.net-bs4');
+@import url('datatables.net-buttons-bs4');
+@import url('datatables.net-responsive-bs4');

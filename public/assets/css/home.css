@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+    color: black;
+    text-decoration: none;
+}
+
+.wrapper {
+    background-image: url('../img/bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100%;
+}
+
+header {
+    width: 100wh;
+    height: auto;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding: 3em 3em;
+    font-size: 1.2em;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.logo img {
+    height: 350px;
+    margin-top: 135px;
+}
+
+.brand h1 {
+    font-size: 3em;
+}
