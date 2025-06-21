@@ -31,7 +31,7 @@ return [
     */
 
     'use_ico_only' => false,
-    'use_full_favicon' => false,
+    'use_full_favicon' => true,
 
     /*
     |--------------------------------------------------------------------------
@@ -301,6 +301,15 @@ return [
 
     'menu' => [
         [
+            'type' => 'link',
+            'text' => 'GitHub',
+            'url' => 'https://github.com/sheeranada/siwage',
+            'icon' => 'fab fa-github',
+            'topnav_right' => true,
+            'target' => '_blank',
+        ],
+
+        [
             'type' => 'fullscreen-widget',
             'topnav_right' => true,
         ],
@@ -352,7 +361,7 @@ return [
             'icon' => 'fas fa-tags',
             'submenu' => [
                 [
-                    'header' => 'Profil Diri', // atau ganti dengan "Kualifikasi", "Data Personal", dll
+                    'header' => 'Profil Pribadi',
                 ],
                 [
                     'text' => 'Pendidikan',
